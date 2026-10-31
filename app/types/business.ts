@@ -1,3 +1,6 @@
+export type Locale = "ar" | "en";
+export type Currency = "EGP" | "SAR" | "AED" | "KWD";
+
 export interface MenuItem {
   id: string;
   name: string;
@@ -24,4 +27,6 @@ export interface Business {
     accent: string;
   };
   menu: MenuCategory[];
+  currency: Currency;
+  locale: Locale;
 }

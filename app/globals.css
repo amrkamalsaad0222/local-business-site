@@ -9,6 +9,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-cairo);
+  --color-primary: var(--brand-primary);
+  --color-accent: var(--brand-accent);
 }
 
 @media (prefers-color-scheme: dark) {

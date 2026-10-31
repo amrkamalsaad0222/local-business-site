@@ -2,11 +2,12 @@ import { Business } from "../types/business";
 
 export const business: Business = {
   name: "اسم المكان",
+  tagline: "قهوة وأكل بيتي",
   whatsapp: "201211213667",
   address: "العنوان هنا",
   hours: "يوميًا من 10 ص إلى 12 م",
   colors: {
-    primary: "#b45309",
+    primary: "#0f766e",
     accent: "#78350f",
   },
   menu: [

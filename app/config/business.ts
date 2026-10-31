@@ -13,7 +13,16 @@ export const business: Business = {
     {
       id: "hot-drinks",
       name: "مشروبات ساخنة",
-      items: [],
+      items: [
+        {
+          id: "turkish-coffee",
+          name: "قهوة تركي",
+          price: 40,
+          featured: true,
+          description: "قهوة تركي مظبوطة على نار هادية",
+        },
+        { id: "tea", name: "شاي كشري", price: 15 },
+      ],
     },
   ],
   locale: "ar",

@@ -9,10 +9,14 @@ export default function Home() {
           <h2>{m.name}</h2>
           {m.items.map((i) => (
             <div key={i.id} className="flex justify-between">
-              <p>{i.name}</p>
+              <div>
+                <p>{i.name}</p>
+                {i.description && (
+                  <p className="text-sm text-gray-500">{i.description}</p>
+                )}
+              </div>
               <p>
-                {i.price}
-                <span className="ms-1">{business.currency}</span>
+                {i.price} {business.currency}
               </p>
             </div>
           ))}

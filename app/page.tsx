@@ -10,7 +10,16 @@ export default function Home() {
           {m.items.map((i) => (
             <div key={i.id} className="flex justify-between">
               <div>
-                <p>{i.name}</p>
+                <p>
+                  {i.name}
+                  {i.featured ? (
+                    <span className="ms-2  rounded-full bg-amber-100 px-2 text-xs text-amber-800">
+                      مميز
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </p>
                 {i.description && (
                   <p className="text-sm text-gray-500">{i.description}</p>
                 )}

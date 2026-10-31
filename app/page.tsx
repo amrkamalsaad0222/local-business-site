@@ -8,11 +8,11 @@ export default function Home() {
         <section key={m.id}>
           <h2>{m.name}</h2>
           {m.items.map((i) => (
-            <div key={i.id}>
+            <div key={i.id} className="flex justify-between">
               <p>{i.name}</p>
               <p>
                 {i.price}
-                <span>{business.currency}</span>
+                <span className="ms-1">{business.currency}</span>
               </p>
             </div>
           ))}

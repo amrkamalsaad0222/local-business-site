@@ -15,6 +15,7 @@ export default function Home() {
         <FaWhatsapp className="size-5" />
         اطلب على واتساب
       </a>
+
       {business.menu.map((m) => (
         <section key={m.id}>
           <h2 className="text-accent mt-8 mb-4 text-xl font-semibold">

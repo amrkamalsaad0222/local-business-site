@@ -32,10 +32,10 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <main className="mx-auto max-w-2xl px-4 py-8">
+      <main className="mx-auto max-w-2xl px-4 py-12">
         {business.menu.map((m) => (
           <section key={m.id}>
-            <h2 className="text-accent mt-8 mb-4 text-xl font-semibold">
+            <h2 className="text-accent mt-12 mb-6 text-2xl font-bold">
               {m.name}
             </h2>
             {m.items.map((i) => (
@@ -58,7 +58,7 @@ export default function Home() {
                     <p className="text-sm text-gray-500">{i.description}</p>
                   )}
                 </div>
-                <p>
+                <p className="text-primary font-semibold">
                   {i.price} {business.currency}
                 </p>
               </div>

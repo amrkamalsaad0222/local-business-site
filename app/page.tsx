@@ -13,7 +13,7 @@ export default function Home() {
           alt={business.name}
           fill
           priority
-          className="object-cover"
+          className="object-cover saturate-75 brightness-90"
         />
         <div className="absolute inset-0 bg-linear-to-t from-[#1c1410] via-black/30 to-transparent" />
         <div className="relative z-10 w-full max-w-2xl px-6 pb-10 text-start text-white sm:px-12 sm:pb-14">
@@ -25,7 +25,7 @@ export default function Home() {
             href={`https://wa.me/${business.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-2 rounded-full border-2 border-[#25D366] bg-[#25D366] px-6 py-3 font-semibold text-[#0b1220] shadow-md transition duration-300 hover:bg-[#0b1220] hover:text-[#25D366] hover:shadow-[0_0_24px_rgba(37,211,102,0.45)] active:scale-95"
+            className="mt-4 inline-flex items-center gap-2 rounded-full border-2 border-[#25D366] bg-[#25d365eb] px-6 py-3 font-semibold text-[#0b1220] shadow-md transition duration-300 hover:bg-[#0b1220] hover:text-[#25D366] hover:shadow-[0_0_24px_rgba(37,211,102,0.45)] active:scale-95"
           >
             <FaWhatsapp className="size-5" />
             اطلب على واتساب
@@ -33,7 +33,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-2xl px-4 py-12">
+      <main className="mx-auto max-w-2xl px-4 py-8">
         {business.menu.map((m) => (
           <section key={m.id}>
             <h2 className="text-accent mt-12 mb-6 text-2xl font-bold">

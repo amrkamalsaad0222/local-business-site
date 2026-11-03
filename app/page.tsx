@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <section className="relative flex h-[70vh] items-end justify-start sm:h-auto sm:aspect-[3/2] sm:max-h-[90vh]">
+      <section className="relative flex h-[70vh] items-end justify-start sm:h-auto sm:aspect-3/2 sm:max-h-[90vh]">
         <Image
           src="/images/hero.jpg"
           alt={business.name}

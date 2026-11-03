@@ -45,14 +45,12 @@ export default function Home() {
                 className="flex justify-between py-3 border-b border-white/20"
               >
                 <div>
-                  <p>
+                  <p className="flex items-center gap-2">
                     {i.name}
-                    {i.featured ? (
-                      <span className="ms-2 rounded-full bg-primary/20 px-2 text-xs text-primary">
+                    {i.featured && (
+                      <span className="rounded-full bg-primary/20 px-2.5 py-0.5 text-sm text-primary">
                         مميز
                       </span>
-                    ) : (
-                      ""
                     )}
                   </p>
                   {i.description && (

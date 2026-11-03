@@ -7,8 +7,8 @@ export const business: Business = {
   address: "العنوان هنا",
   hours: "يوميًا من 10 ص إلى 12 م",
   colors: {
-    primary: "#0f766e",
-    accent: "#78350f",
+    primary: "#c8773e",
+    accent: "#e8c9a0",
   },
   menu: [
     {

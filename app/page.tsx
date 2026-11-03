@@ -7,17 +7,17 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <section className="relative flex h-[70vh] items-center justify-center sm:h-auto sm:aspect-[3/2] sm:max-h-[90vh]">
+      <section className="relative flex h-[70vh] items-end justify-start sm:h-auto sm:aspect-[3/2] sm:max-h-[90vh]">
         <Image
           src="/images/hero.jpg"
           alt={business.name}
           fill
           priority
-          className="object-cover "
+          className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center text-white">
-          <h1 className="text-4xl font-bold md:text-6xl">{business.name}</h1>
+        <div className="absolute inset-0 bg-linear-to-t from-[#1c1410] via-black/30 to-transparent" />
+        <div className="relative z-10 w-full max-w-2xl px-6 pb-10 text-start text-white sm:px-12 sm:pb-14">
+          <h1 className="text-5xl font-bold md:text-7xl">{business.name}</h1>
           {business.tagline && (
             <p className="mt-2 text-lg text-white/90">{business.tagline}</p>
           )}
@@ -32,6 +32,7 @@ export default function Home() {
           </a>
         </div>
       </section>
+
       <main className="mx-auto max-w-2xl px-4 py-12">
         {business.menu.map((m) => (
           <section key={m.id}>
@@ -41,13 +42,13 @@ export default function Home() {
             {m.items.map((i) => (
               <div
                 key={i.id}
-                className="flex justify-between py-3 border-b border-gray-200"
+                className="flex justify-between py-3 border-b border-white/20"
               >
                 <div>
                   <p>
                     {i.name}
                     {i.featured ? (
-                      <span className="ms-2 rounded-full bg-amber-100 px-2 text-xs text-amber-800">
+                      <span className="ms-2 rounded-full bg-primary/20 px-2 text-xs text-primary">
                         مميز
                       </span>
                     ) : (
@@ -55,7 +56,9 @@ export default function Home() {
                     )}
                   </p>
                   {i.description && (
-                    <p className="text-sm text-gray-500">{i.description}</p>
+                    <p className="text-sm text-foreground/60">
+                      {i.description}
+                    </p>
                   )}
                 </div>
                 <p className="text-primary font-semibold">

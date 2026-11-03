@@ -42,24 +42,35 @@ export default function Home() {
             {m.items.map((i) => (
               <div
                 key={i.id}
-                className="flex justify-between py-3 border-b border-white/20"
+                className="flex items-center justify-between gap-4 border-b border-white/20 py-3"
               >
-                <div>
-                  <p className="flex items-center gap-2">
-                    {i.name}
-                    {i.featured && (
-                      <span className="rounded-full bg-primary/20 px-2.5 py-0.5 text-sm text-primary">
-                        مميز
-                      </span>
-                    )}
-                  </p>
-                  {i.description && (
-                    <p className="text-sm text-foreground/60">
-                      {i.description}
-                    </p>
+                <div className="flex items-center gap-3">
+                  {i.image && (
+                    <Image
+                      src={i.image}
+                      alt={i.name}
+                      width={80}
+                      height={80}
+                      className="size-20 rounded-lg object-cover"
+                    />
                   )}
+                  <div>
+                    <p className="flex items-center gap-2">
+                      {i.name}
+                      {i.featured && (
+                        <span className="rounded-full bg-primary/20 px-2.5 py-0.5 text-sm text-primary">
+                          مميز
+                        </span>
+                      )}
+                    </p>
+                    {i.description && (
+                      <p className="text-sm text-foreground/60">
+                        {i.description}
+                      </p>
+                    )}
+                  </div>
                 </div>
-                <p className="text-primary font-semibold">
+                <p className="whitespace-nowrap text-primary font-semibold">
                   {i.price} {business.currency}
                 </p>
               </div>

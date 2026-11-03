@@ -18,6 +18,7 @@ export const business: Business = {
         {
           id: "turkish-coffee",
           name: "قهوة تركي",
+          image: "/images/turkish-coffee.jpg",
           price: 40,
           featured: true,
           description: "قهوة تركي مظبوطة على نار هادية",

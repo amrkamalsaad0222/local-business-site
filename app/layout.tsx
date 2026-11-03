@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Tajawal, Lalezar } from "next/font/google";
+import { Cairo, Lalezar } from "next/font/google";
 import "./globals.css";
 import type { CSSProperties } from "react";
 import { business } from "@/config/business";
@@ -10,10 +10,9 @@ const lalezar = Lalezar({
   weight: "400",
 });
 
-const cairo = Tajawal({
+const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic", "latin"],
-  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {

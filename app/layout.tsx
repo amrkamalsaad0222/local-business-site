@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Cairo } from "next/font/google";
+import { Cairo, Lalezar } from "next/font/google";
 import "./globals.css";
 import type { CSSProperties } from "react";
 import { business } from "@/config/business";
+
+const lalezar = Lalezar({
+  variable: "--font-lalezar",
+  subsets: ["arabic", "latin"],
+  weight: "400",
+});
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -25,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       }
       lang="ar"
       dir="rtl"
-      className={`${cairo.variable} h-full antialiased`}
+      className={`${cairo.variable} ${lalezar.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

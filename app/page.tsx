@@ -17,7 +17,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-linear-to-t from-[#1c1410] via-black/30 to-transparent" />
         <div className="relative z-10 w-full max-w-2xl px-6 pb-10 text-start text-white sm:px-12 sm:pb-14">
-          <h1 className="text-5xl font-bold md:text-7xl">{business.name}</h1>
+          <h1 className="font-display text-5xl md:text-7xl">{business.name}</h1>
           {business.tagline && (
             <p className="mt-2 text-lg text-white/90">{business.tagline}</p>
           )}
@@ -36,7 +36,7 @@ export default function Home() {
       <main className="mx-auto max-w-2xl px-4 pb-12">
         {business.menu.map((m) => (
           <section key={m.id}>
-            <h2 className="text-accent mt-12 mb-6 text-2xl font-bold">
+            <h2 className="text-accent font-display mt-12 mb-6 text-2xl">
               {m.name}
             </h2>
             {m.items.map((i) => (

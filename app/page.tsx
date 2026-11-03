@@ -2,6 +2,8 @@ import { business } from "@/config/business";
 
 import { FaWhatsapp } from "react-icons/fa6";
 
+import { LuMapPin, LuClock } from "react-icons/lu";
+
 import Image from "next/image";
 
 export default function Home() {
@@ -33,7 +35,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="mx-auto max-w-2xl px-4 pb-12">
+      <main className="mx-auto w-full max-w-2xl px-4 pb-12">
         {business.menu.map((m) => (
           <section key={m.id}>
             <h2 className="text-accent font-display mt-12 mb-6 text-2xl">
@@ -78,6 +80,17 @@ export default function Home() {
           </section>
         ))}
       </main>
+      <section className="mx-auto w-full max-w-2xl px-4 pb-16">
+        <h2 className="font-display text-accent mb-6 text-2xl">تواصل معنا</h2>
+        <div className="mb-2 flex items-center gap-3">
+          <LuMapPin className="size-5 text-primary" />
+          <span>{business.address}</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <LuClock className="size-5 text-primary" />
+          <span>{business.hours}</span>
+        </div>
+      </section>
     </>
   );
 }

@@ -18,8 +18,11 @@ export default function MenuWithCart() {
     0,
   );
 
+  const orderItem = allItems.filter((item) => (cart[item.id] ?? 0) > 0);
+
   const addItem = (id: string) =>
     setCart((prev) => ({ ...prev, [id]: (prev[id] ?? 0) + 1 }));
+
   return (
     <>
       <main id="menu" className="mx-auto w-full max-w-2xl px-4 pb-24">

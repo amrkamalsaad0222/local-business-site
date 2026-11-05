@@ -24,9 +24,11 @@ export default function MenuWithCart() {
     (item) => `- ${item.name} x ${cart[item.id]}`,
   );
 
+  const message = `عايز أطلب:\n${orderLines.join("\n")}\nالإجمالي: ${totalPrice} ${business.currency}`;
+
   const addItem = (id: string) =>
     setCart((prev) => ({ ...prev, [id]: (prev[id] ?? 0) + 1 }));
-  console.log(orderLines);
+  console.log(message);
   return (
     <>
       <main id="menu" className="mx-auto w-full max-w-2xl px-4 pb-24">

@@ -6,6 +6,8 @@ import { business } from "@/config/business";
 
 import { useState } from "react";
 
+import { FaWhatsapp } from "react-icons/fa6";
+
 export default function MenuWithCart() {
   const [cart, setCart] = useState<Record<string, number>>({});
 
@@ -28,7 +30,9 @@ export default function MenuWithCart() {
 
   const addItem = (id: string) =>
     setCart((prev) => ({ ...prev, [id]: (prev[id] ?? 0) + 1 }));
-  console.log(message);
+
+  const whatsappUrl = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message)}`;
+
   return (
     <>
       <main id="menu" className="mx-auto w-full max-w-2xl px-4 pb-24">
@@ -44,8 +48,19 @@ export default function MenuWithCart() {
         ))}
       </main>
       {totalCount > 0 && (
-        <div className="fixed inset-x-0 bottom-0 bg-primary p-4 text-center z-50 text-[#1c1410] font-semibold">
-          طلبك ({totalCount}) — {totalPrice} {business.currency}
+        <div className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-between gap-4 border-t border-white/20 bg-[#1c1410] p-4">
+          <p className="font-semibold text-accent">
+            طلبك ({totalCount}) — {totalPrice} {business.currency}
+          </p>
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-full bg-primary px-6 py-2 font-bold text-[#1c1410] transition hover:opacity-90 active:scale-95"
+          >
+            <FaWhatsapp className="size-5" />
+            أرسل الطلب
+          </a>
         </div>
       )}
     </>

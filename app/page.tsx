@@ -1,11 +1,17 @@
 import { business } from "@/config/business";
 
-import { FaWhatsapp } from "react-icons/fa6";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 import { LuMapPin, LuClock } from "react-icons/lu";
 
 import Image from "next/image";
+
 import MenuWithCart from "@/components/MenuWithCart";
+
+const developer = {
+  name: "Amr Kamal",
+  whatsapp: "201211213667", // رقمك إنت
+};
 
 export default function Home() {
   return (
@@ -33,9 +39,10 @@ export default function Home() {
           </a>
         </div>
       </section>
+
       <MenuWithCart />
 
-      <section className="mx-auto w-full max-w-2xl px-4 pb-16">
+      <section className="mx-auto w-full max-w-2xl px-4 pb-8">
         <h2 className="font-display text-accent mb-6 text-2xl">تواصل معنا</h2>
         <div className="mb-2 flex items-center gap-3">
           <LuMapPin className="size-5 text-primary" />
@@ -45,16 +52,45 @@ export default function Home() {
           <LuClock className="size-5 text-primary" />
           <span>{business.hours}</span>
         </div>
-        <a
-          href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent("عندي استفسار: ")}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center gap-2 rounded-full border-2 border-[#34b86a]/70 bg-[#34b86a]/80 px-6 py-3 font-semibold text-[#0b1220] shadow-md transition duration-300 hover:bg-transparent hover:text-[#34b86a] hover:shadow-[0_0_24px_rgba(37,211,102,0.45)] active:scale-95"
-        >
-          <FaWhatsapp className="size-5" />
-          تواصل معنا على واتساب
-        </a>
+
+        <div className="mt-6 flex flex-col items-center gap-4">
+          <a
+            href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent("عندي استفسار: ")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-[#34b86a]/70 bg-[#34b86a]/80 px-6 py-3 font-semibold text-[#0b1220] shadow-md transition duration-300 hover:bg-transparent hover:text-[#34b86a] hover:shadow-[0_0_24px_rgba(37,211,102,0.45)] active:scale-95"
+          >
+            <FaWhatsapp className="size-5" />
+            تواصل معنا على واتساب
+          </a>
+
+          {business.instagram && (
+            <a
+              href={`https://instagram.com/${business.instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-block rounded-full bg-linear-to-r from-[#4a1d6e] via-[#8a1c4a] to-[#b5651d] p-0.5 shadow-[0_0_14px_rgba(176,35,95,0.3)] transition duration-300 hover:shadow-[0_0_28px_rgba(176,35,95,0.55)] active:scale-95"
+            >
+              <span className="flex items-center gap-2 rounded-full bg-[#1c1410] px-6 py-3 font-semibold text-white transition duration-300 group-hover:bg-transparent">
+                <FaInstagram className="size-5" />
+                تابعنا على الانستاجرام
+              </span>
+            </a>
+          )}
+        </div>
       </section>
+      <footer className="px-4 pb-24 pt-8 text-center text-sm text-foreground/60 space-y-1">
+        <p>© 2026 {business.name}</p>
+        <p>تصميم وتطوير : {developer.name}</p>
+        <a
+          className="text-primary  hover:opacity-80 "
+          href={`https://wa.me/${developer.whatsapp}?text=${encodeURIComponent("عايز موقع لمحلي")}`}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          تواصل معي
+        </a>
+      </footer>
     </>
   );
 }

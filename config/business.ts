@@ -3,8 +3,8 @@ import { Business } from "@/types/business";
 export const business: Business = {
   name: "aya & alaa (kersh coffee)",
   tagline: "shai w7sh",
-  whatsapp: "201211213667",
-  instagram: "اسم_الحساب",
+  whatsapp: "20*******",
+  instagram: "kersh.coffee",
   address: "العنوان هنا",
   hours: "يوميًا من 10 ص إلى 12 م",
   colors: {

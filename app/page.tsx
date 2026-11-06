@@ -9,8 +9,8 @@ import Image from "next/image";
 import MenuWithCart from "@/components/MenuWithCart";
 
 const developer = {
-  name: "Amr Kamal",
-  whatsapp: "201211213667", // رقمك إنت
+  name: "AKS",
+  whatsapp: "201515437193",
 };
 
 export default function Home() {
@@ -79,14 +79,14 @@ export default function Home() {
           )}
         </div>
       </section>
-      <footer className="px-4 pb-24 pt-8 text-center text-sm text-foreground/60 space-y-1">
+      <footer className="space-y-3 px-4 pb-24 pt-8 text-center text-sm text-foreground/60">
         <p>© 2026 {business.name}</p>
-        <p>تصميم وتطوير : {developer.name}</p>
+        <p>تصميم وتطوير: {developer.name}</p>
         <a
-          className="text-primary  hover:opacity-80 "
           href={`https://wa.me/${developer.whatsapp}?text=${encodeURIComponent("عايز موقع لمحلي")}`}
-          rel="noopener noreferrer"
           target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block rounded-full border border-primary/60 px-4 py-1.5 text-primary transition duration-300 hover:bg-primary hover:text-[#1c1410] active:scale-95"
         >
           تواصل معي
         </a>

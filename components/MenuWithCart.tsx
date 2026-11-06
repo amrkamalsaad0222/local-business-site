@@ -6,10 +6,11 @@ import { business } from "@/config/business";
 
 import { useState } from "react";
 
-import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa6";
 
 export default function MenuWithCart() {
   const [cart, setCart] = useState<Record<string, number>>({});
+  const [selectedId, setSelectedId] = useState<string>(business.menu[0].id);
 
   const allItems = business.menu.flatMap((m) => m.items);
 
@@ -33,19 +34,35 @@ export default function MenuWithCart() {
 
   const whatsappUrl = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message)}`;
 
+  const selectedCategory = business.menu.find((m) => m.id === selectedId);
   return (
     <>
-      <main id="menu" className="mx-auto w-full max-w-2xl px-4 pb-24 ">
-        {business.menu.map((m) => (
-          <section key={m.id}>
-            <h2 className="text-accent font-display mt-12 mb-6 text-2xl">
+      <main id="menu" className="mx-auto w-full max-w-2xl px-4 pb-24 mt-4">
+        <div className="flex justify-center gap-2 overflow-x-auto py-2">
+          {business.menu.map((m) => (
+            <button
+              key={m.id}
+              type="button"
+              onClick={() => setSelectedId(m.id)}
+              className={`whitespace-nowrap rounded-full border border-primary px-4 py-1.5 font-semibold transition duration-300 active:scale-95 ${
+                m.id === selectedId
+                  ? "bg-primary text-[#1c1410] shadow-[0_0_16px_rgba(200,119,62,0.45)]"
+                  : "text-primary hover:bg-primary/20 hover:shadow-[0_0_12px_rgba(200,119,62,0.3)]"
+              }`}
+            >
               {m.name}
-            </h2>
-            {m.items.map((i) => (
-              <MenuItemCard onAdd={addItem} key={i.id} item={i} />
-            ))}
-          </section>
-        ))}
+            </button>
+          ))}
+        </div>
+
+        <section>
+          <h2 className="text-center text-accent font-display mt-12 mb-6 text-2xl">
+            {selectedCategory?.name}
+          </h2>
+          {selectedCategory?.items.map((i) => (
+            <MenuItemCard onAdd={addItem} key={i.id} item={i} />
+          ))}
+        </section>
       </main>
       {totalCount > 0 && (
         <div className=" fixed inset-x-0 bottom-0 z-50 flex items-center justify-between gap-4 border-t border-white/20 bg-[#1c1410] p-2">

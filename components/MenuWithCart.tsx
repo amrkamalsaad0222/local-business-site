@@ -6,7 +6,7 @@ import { business } from "@/config/business";
 
 import { useState } from "react";
 
-import { FaWhatsapp } from "react-icons/fa6";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 export default function MenuWithCart() {
   const [cart, setCart] = useState<Record<string, number>>({});
@@ -35,7 +35,7 @@ export default function MenuWithCart() {
 
   return (
     <>
-      <main id="menu" className="mx-auto w-full max-w-2xl px-4 pb-24">
+      <main id="menu" className="mx-auto w-full max-w-2xl px-4 pb-24 ">
         {business.menu.map((m) => (
           <section key={m.id}>
             <h2 className="text-accent font-display mt-12 mb-6 text-2xl">
@@ -48,15 +48,15 @@ export default function MenuWithCart() {
         ))}
       </main>
       {totalCount > 0 && (
-        <div className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-between gap-4 border-t border-white/20 bg-[#1c1410] p-4">
-          <p className="font-semibold text-accent">
+        <div className=" fixed inset-x-0 bottom-0 z-50 flex items-center justify-between gap-4 border-t border-white/20 bg-[#1c1410] p-2">
+          <p className="font-semibold text-accent ">
             طلبك ({totalCount}) — {totalPrice} {business.currency}
           </p>
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full bg-primary px-6 py-2 font-bold text-[#1c1410] transition hover:opacity-90 active:scale-95"
+            className=" flex items-center gap-2 rounded-full bg-primary px-6 py-2 font-bold text-[#1c1410] transition hover:opacity-90 active:scale-95"
           >
             <FaWhatsapp className="size-5" />
             أرسل الطلب

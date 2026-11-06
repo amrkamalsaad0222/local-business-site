@@ -20,9 +20,9 @@ export default function MenuItemCard({
           <Image
             src={item.image}
             alt={item.name}
-            width={80}
-            height={80}
-            className="size-20 rounded-lg object-cover"
+            width={112}
+            height={112}
+            className="size-28 rounded-lg object-cover"
           />
         )}
         <div>

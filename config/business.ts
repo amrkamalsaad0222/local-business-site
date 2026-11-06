@@ -38,9 +38,10 @@ export const business: Business = {
           name: "سبانش لاتية",
           price: 120,
           featured: true,
+          image: "/images/iced-latte.jpg",
         },
         { id: "lemonade", name: "ليمون بالنعناع", price: 45 },
-        { id: "iced-coffee", name: "آيس كوفي", price: 60 },
+        { id: "iced-coffee", name: "وايت موكا", price: 60 },
       ],
     },
     {

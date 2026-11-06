@@ -38,7 +38,7 @@ export default function MenuWithCart() {
   return (
     <>
       <main id="menu" className="mx-auto w-full max-w-2xl px-4 pb-24 mt-4">
-        <div className="flex justify-center gap-2 overflow-x-auto py-2">
+        <div className="flex gap-2 overflow-x-auto py-2 scrollbar-none [&::-webkit-scrollbar]:hidden sm:justify-center">
           {business.menu.map((m) => (
             <button
               key={m.id}

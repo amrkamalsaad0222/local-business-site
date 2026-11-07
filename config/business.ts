@@ -1,8 +1,8 @@
 import { Business } from "@/types/business";
 
 export const business: Business = {
-  name: "aya & alaa (kersh coffee)",
-  tagline: "shai w7sh",
+  name: "Triple A Coffee",
+  tagline: "مكان هادئ للعمل والمذاكرة",
   whatsapp: "20*******",
   instagram: "kersh.coffee",
   address: "العنوان هنا",

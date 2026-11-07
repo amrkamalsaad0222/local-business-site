@@ -30,13 +30,6 @@ export default function Home() {
           {business.tagline && (
             <p className="mt-2 text-lg text-white/90">{business.tagline}</p>
           )}
-
-          <a
-            href="#menu"
-            className="mt-4 inline-flex items-center gap-2 rounded-full border-2 border-primary bg-primary px-6 py-3 font-semibold text-[#1c1410] shadow-md transition duration-300 hover:bg-transparent hover:text-primary hover:shadow-[0_0_24px_rgba(200,119,62,0.45)] active:scale-95"
-          >
-            تصفّح المنيو
-          </a>
         </div>
       </section>
 

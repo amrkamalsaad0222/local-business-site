@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Local Business Site
 
-## Getting Started
+A fast, mobile-first menu website for cafes and restaurants. Customers browse the menu, add items to a cart, and send the whole order to the shop on WhatsApp in one tap. No backend, no database.
 
-First, run the development server:
+Built with Next.js (App Router), TypeScript and Tailwind CSS. Arabic (RTL) by default.
+
+## Features
+
+- Menu with categories, item photos and "featured" badges
+- Category tabs, with the cart kept while switching
+- Cart bar that builds a ready-made WhatsApp message (items, quantities, total)
+- Contact section with WhatsApp and optional Instagram link
+- Everything about the business lives in one file: `config/business.ts`
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Set up a new client
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create a new repo from this one ("Use this template" on GitHub). Keep client repos private.
+2. Edit `config/business.ts`: name, tagline, WhatsApp number, address, hours, colors and the menu.
+   - WhatsApp format: country code + number, no `+`, no spaces (example: `201xxxxxxxxx`).
+   - Every menu item needs a unique `id`.
+3. Put the images in `public/images/` and point to them from the config.
+4. Replace `public/images/hero.jpg` and `app/icon.png`.
+5. Update the developer details in `app/page.tsx` if needed.
+6. Deploy to Vercel.
 
-## Learn More
+## Tech notes
 
-To learn more about Next.js, take a look at the following resources:
+- No `src` folder. Folders: `app/`, `components/`, `config/`, `types/`, `lib/`.
+- Cart state lives in `components/MenuWithCart.tsx` (plain `useState`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Credits
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Icons: react-icons (WhatsApp and Instagram icons by Font Awesome, CC BY 4.0)
+- Fonts: Cairo and Lalezar (SIL Open Font License)
+- Demo photos: Unsplash. Replace them with the client's own photos before delivery.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built by AKS.
